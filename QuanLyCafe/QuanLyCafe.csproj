@@ -150,15 +150,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="thu\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Assets\Cafe_2.png" />
     <Content Include="Assets\icons8-customers-56.png" />
     <Content Include="Assets\icons8-money-56 %281%29.png" />
     <Content Include="Assets\icons8-money-56 %283%29.png" />
     <Content Include="Assets\icons8-user-56.png" />
+    <Content Include="thu\TextFile1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
