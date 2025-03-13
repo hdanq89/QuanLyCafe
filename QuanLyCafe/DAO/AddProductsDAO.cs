@@ -25,7 +25,7 @@ namespace QuanLyCafe.DAO
         {
             List<AddProductsDTO> listProduct = new List<AddProductsDTO>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("select * from Products where statusDel = 0");
+            DataTable data = DataProvider.Instance.ExecuteQuery("select * from Products,Categories where statusDel = 0 and Category_id = ID_Category");
 
             foreach (DataRow item in data.Rows)
             {
@@ -42,5 +42,18 @@ namespace QuanLyCafe.DAO
             return result > 0;
         }
 
+        public bool updateProduct(string name, int stock, float price, int category, string img, string status, string description,int id)
+        {
+            string udpateQuery = "update Products set ProductName= @ProductName ,Stock= @Stock ,Price= @Price ,Category_id= @Category_id ,Image= @Image ,Status= @Status ,Description= @Description where Product_ID= @Product_ID";
+            int result = DataProvider.Instance.ExecuteNonQuery(udpateQuery, new object[] { name, stock, price, category, img, status, description,id });
+            return result > 0;
+        }
+
+        public bool deleteProduct(int id)
+        {
+            string udpateQuery = "update Products set statusDel = 1 where Product_ID= @Product_ID ";
+            int result = DataProvider.Instance.ExecuteNonQuery(udpateQuery, new object[] { id });
+            return result > 0;
+        }
     }
 }

@@ -164,9 +164,7 @@ namespace QuanLyCafe
                         if(fileImgProfile != fileImgView)
                         {
                             File.Copy(adminAddUsers_imgView.ImageLocation, path, true);
-                        }    
-                        
-
+                        }   
                         MessageBox.Show("Updated successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         DisplayUser();
                         clear();
@@ -230,18 +228,11 @@ namespace QuanLyCafe
 
                 if (result == DialogResult.Yes)
                 {                  
-                    string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                    string relativePath = Path.Combine("User_Directory", username + ".jpg");
-                    string path = Path.Combine(baseDirectory, relativePath);
-                    string directoryPath = Path.GetDirectoryName(path);
+                   
 
                    
                     if (AddUsersDAO.Instance.deleteUser(id))
-                    {
-                        if(File.Exists(path))
-                        {
-                            File.Delete(path);
-                        }    
+                    { 
 
                         MessageBox.Show("Deleted successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         DisplayUser();

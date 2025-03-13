@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button4 = new System.Windows.Forms.Button();
             this.adminAddProducts_deleteBtn = new System.Windows.Forms.Button();
             this.adminAddProducts_updateBtn = new System.Windows.Forms.Button();
             this.adminAddProducts_addBtn = new System.Windows.Forms.Button();
@@ -51,26 +50,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Clear = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminAddProducts_imgView)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button4
-            // 
-            this.button4.AccessibleDescription = "adminAddProducts_clearBtn";
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(522, 169);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(78, 32);
-            this.button4.TabIndex = 20;
-            this.button4.Text = "CLEAR";
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // adminAddProducts_deleteBtn
             // 
@@ -84,6 +70,7 @@
             this.adminAddProducts_deleteBtn.TabIndex = 19;
             this.adminAddProducts_deleteBtn.Text = "DELETE";
             this.adminAddProducts_deleteBtn.UseVisualStyleBackColor = false;
+            this.adminAddProducts_deleteBtn.Click += new System.EventHandler(this.adminAddProducts_deleteBtn_Click);
             // 
             // adminAddProducts_updateBtn
             // 
@@ -97,6 +84,7 @@
             this.adminAddProducts_updateBtn.TabIndex = 18;
             this.adminAddProducts_updateBtn.Text = "UPDATE";
             this.adminAddProducts_updateBtn.UseVisualStyleBackColor = false;
+            this.adminAddProducts_updateBtn.Click += new System.EventHandler(this.adminAddProducts_updateBtn_Click);
             // 
             // adminAddProducts_addBtn
             // 
@@ -248,7 +236,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.Clear);
             this.panel2.Controls.Add(this.adminAddProducts_deleteBtn);
             this.panel2.Controls.Add(this.adminAddProducts_updateBtn);
             this.panel2.Controls.Add(this.adminAddProducts_addBtn);
@@ -319,6 +307,22 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView1.Size = new System.Drawing.Size(834, 236);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // Clear
+            // 
+            this.Clear.AccessibleDescription = "adminAddProducts_clearBtn";
+            this.Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Clear.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Clear.ForeColor = System.Drawing.Color.White;
+            this.Clear.Location = new System.Drawing.Point(522, 169);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(78, 32);
+            this.Clear.TabIndex = 20;
+            this.Clear.Text = "CLEAR";
+            this.Clear.UseVisualStyleBackColor = false;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // AddProductForm
             // 
@@ -340,8 +344,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button adminAddProducts_deleteBtn;
         private System.Windows.Forms.Button adminAddProducts_updateBtn;
         private System.Windows.Forms.Button adminAddProducts_addBtn;
@@ -364,5 +366,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox adminAddProducts_Description;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Clear;
     }
 }

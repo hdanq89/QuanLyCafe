@@ -18,6 +18,7 @@ namespace QuanLyCafe.DTO
             this.Price = (float)Convert.ToDouble(row["Price"].ToString());
             this.Status = row["Status"].ToString();
             this.DesCription = row["Description"].ToString();
+            this.Type = row["Name_Category"].ToString();
         }
 
 
@@ -37,23 +38,6 @@ namespace QuanLyCafe.DTO
             set { stock = value; }
         }
 
-        private string desCription;
-
-        public string DesCription
-        {
-            get { return desCription; }
-            set { desCription = value; }
-        }
-        
-
-        private string status;
-
-        public string Status
-        {
-            get { return status; }
-            set { status = value; }
-        }
-
         private float price;
 
         public float Price
@@ -62,7 +46,35 @@ namespace QuanLyCafe.DTO
             set { price = value; }
         }
 
+        private string type;
 
+        public string Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
+
+       
+
+        private string desCription;
+
+        public string DesCription
+        {
+            get { return desCription; }
+            set { desCription = value; }
+        }
+
+
+        
+
+
+        private string status;
+
+        public string Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
 
 
     }
