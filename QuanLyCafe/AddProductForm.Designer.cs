@@ -46,11 +46,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.adminAddProducts_Description = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.adminAddProducts_Description = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminAddProducts_imgView)).BeginInit();
             this.panel2.SuspendLayout();
@@ -271,6 +271,24 @@
             this.panel2.Size = new System.Drawing.Size(858, 222);
             this.panel2.TabIndex = 1;
             // 
+            // adminAddProducts_Description
+            // 
+            this.adminAddProducts_Description.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminAddProducts_Description.Location = new System.Drawing.Point(487, 111);
+            this.adminAddProducts_Description.Name = "adminAddProducts_Description";
+            this.adminAddProducts_Description.Size = new System.Drawing.Size(170, 22);
+            this.adminAddProducts_Description.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(384, 116);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Description:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -301,24 +319,6 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView1.Size = new System.Drawing.Size(834, 236);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(384, 116);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Description:";
-            // 
-            // adminAddProducts_Description
-            // 
-            this.adminAddProducts_Description.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminAddProducts_Description.Location = new System.Drawing.Point(487, 111);
-            this.adminAddProducts_Description.Name = "adminAddProducts_Description";
-            this.adminAddProducts_Description.Size = new System.Drawing.Size(170, 22);
-            this.adminAddProducts_Description.TabIndex = 4;
             // 
             // AddProductForm
             // 

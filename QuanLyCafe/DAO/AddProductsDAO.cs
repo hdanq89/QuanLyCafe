@@ -37,7 +37,7 @@ namespace QuanLyCafe.DAO
 
         public bool insertProduct(string name,int stock,float price,int category,string img,string status,string description)
         {
-            string insertQuery = "insert into Products(ProductName,Stock,Price,Category_id,Image,Status,Description) values( @ProductName , @Stock , @Price, @Category_id , @Image , @Status , @Description )";
+            string insertQuery = "insert into Products(ProductName,Stock,Price,Category_id,Image,Status,Description) values( @ProductName , @Stock , @Price , @Category_id , @Image , @Status , @Description )";
             int result = DataProvider.Instance.ExecuteNonQuery(insertQuery,new object[] { name , stock , price , category, img, status , description });
             return result > 0;
         }

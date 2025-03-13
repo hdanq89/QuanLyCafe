@@ -80,13 +80,16 @@ namespace QuanLyCafe
                            selectedValue == "Phụ kiện pha chế" ? 5 : 0;
                 string status = adminAddProducts_status.SelectedItem.ToString();
                 int stock = Convert.ToInt32( adminAddProducts_stock.Text);
+                string des = adminAddProducts_Description.Text;
                 float price = (float)Convert.ToDouble(adminAddProducts_price.Text);
-                AddProductsDAO.Instance.insertProduct(name,stock,price,type,"",status,);
+                if(AddProductsDAO.Instance.insertProduct(name, stock, price, type, "", status, des))
+                {
+                    MessageBox.Show("hehe");
+                }    
             }
         }
 
+
         #endregion
-
-
     }
 }
