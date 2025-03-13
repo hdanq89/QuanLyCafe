@@ -157,7 +157,7 @@
     <Content Include="Assets\icons8-money-56 %281%29.png" />
     <Content Include="Assets\icons8-money-56 %283%29.png" />
     <Content Include="Assets\icons8-user-56.png" />
-    <Content Include="thu\TextFile1.txt" />
+    <Content Include="NewFolder1\TextFile1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
