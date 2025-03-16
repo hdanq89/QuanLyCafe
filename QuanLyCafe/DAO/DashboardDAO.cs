@@ -23,7 +23,7 @@ namespace QuanLyCafe.DAO
         {
             string query = "select count(*) from Employees where role = 'Cashier' and status = 'Active'";
             object obj =  DataProvider.Instance.ExecuteScalar(query);
-            int result = (obj != null) ? Convert.ToInt32(obj) : 0;
+            int result = (obj != null && obj != DBNull.Value) ? Convert.ToInt32(obj) : 0;
             return result;
         }
 
@@ -31,7 +31,7 @@ namespace QuanLyCafe.DAO
         {
             string query = "select count(*) from Customers";
             object obj = DataProvider.Instance.ExecuteScalar(query);
-            int result = (obj!=null) ? Convert.ToInt32(obj) : 0;
+            int result = (obj!=null && obj != DBNull.Value) ? Convert.ToInt32(obj) : 0;
             return result;
         }
 

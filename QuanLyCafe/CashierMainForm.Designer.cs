@@ -41,11 +41,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cashierLogin_profileBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dashboardForm1 = new QuanLyCafe.DashboardForm();
             this.addProductForm1 = new QuanLyCafe.AddProductForm();
             this.orderForm1 = new QuanLyCafe.OrderForm();
             this.allCustomersForm1 = new QuanLyCafe.AllCustomersForm();
+            this.profileCashier1 = new QuanLyCafe.ProfileCashier();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -101,6 +103,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
             this.panel2.Controls.Add(this.cashier_logoutBtn);
+            this.panel2.Controls.Add(this.cashierLogin_profileBtn);
             this.panel2.Controls.Add(this.cashierLogin_customersBtn);
             this.panel2.Controls.Add(this.cashierLogin_addProdBtn);
             this.panel2.Controls.Add(this.cashierLogin_addUserBtn);
@@ -135,7 +138,7 @@
             this.cashierLogin_customersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cashierLogin_customersBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cashierLogin_customersBtn.ForeColor = System.Drawing.Color.White;
-            this.cashierLogin_customersBtn.Location = new System.Drawing.Point(18, 397);
+            this.cashierLogin_customersBtn.Location = new System.Drawing.Point(18, 368);
             this.cashierLogin_customersBtn.Name = "cashierLogin_customersBtn";
             this.cashierLogin_customersBtn.Size = new System.Drawing.Size(176, 38);
             this.cashierLogin_customersBtn.TabIndex = 14;
@@ -149,7 +152,7 @@
             this.cashierLogin_addProdBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cashierLogin_addProdBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cashierLogin_addProdBtn.ForeColor = System.Drawing.Color.White;
-            this.cashierLogin_addProdBtn.Location = new System.Drawing.Point(18, 343);
+            this.cashierLogin_addProdBtn.Location = new System.Drawing.Point(18, 314);
             this.cashierLogin_addProdBtn.Name = "cashierLogin_addProdBtn";
             this.cashierLogin_addProdBtn.Size = new System.Drawing.Size(176, 38);
             this.cashierLogin_addProdBtn.TabIndex = 13;
@@ -163,7 +166,7 @@
             this.cashierLogin_addUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cashierLogin_addUserBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cashierLogin_addUserBtn.ForeColor = System.Drawing.Color.White;
-            this.cashierLogin_addUserBtn.Location = new System.Drawing.Point(18, 288);
+            this.cashierLogin_addUserBtn.Location = new System.Drawing.Point(18, 259);
             this.cashierLogin_addUserBtn.Name = "cashierLogin_addUserBtn";
             this.cashierLogin_addUserBtn.Size = new System.Drawing.Size(176, 38);
             this.cashierLogin_addUserBtn.TabIndex = 14;
@@ -177,7 +180,7 @@
             this.cashierLogin_dashboardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cashierLogin_dashboardBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cashierLogin_dashboardBtn.ForeColor = System.Drawing.Color.White;
-            this.cashierLogin_dashboardBtn.Location = new System.Drawing.Point(18, 234);
+            this.cashierLogin_dashboardBtn.Location = new System.Drawing.Point(18, 205);
             this.cashierLogin_dashboardBtn.Name = "cashierLogin_dashboardBtn";
             this.cashierLogin_dashboardBtn.Size = new System.Drawing.Size(176, 38);
             this.cashierLogin_dashboardBtn.TabIndex = 13;
@@ -191,7 +194,7 @@
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(97, 184);
+            this.label4.Location = new System.Drawing.Point(97, 155);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 15);
             this.label4.TabIndex = 12;
@@ -203,7 +206,7 @@
             this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(15, 184);
+            this.label3.Location = new System.Drawing.Point(15, 155);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 15);
             this.label3.TabIndex = 11;
@@ -215,16 +218,30 @@
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(27, 145);
+            this.label2.Location = new System.Drawing.Point(27, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(155, 22);
             this.label2.TabIndex = 10;
             this.label2.Text = "Cashier\'s Portal";
             // 
+            // cashierLogin_profileBtn
+            // 
+            this.cashierLogin_profileBtn.AllowDrop = true;
+            this.cashierLogin_profileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cashierLogin_profileBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cashierLogin_profileBtn.ForeColor = System.Drawing.Color.White;
+            this.cashierLogin_profileBtn.Location = new System.Drawing.Point(18, 421);
+            this.cashierLogin_profileBtn.Name = "cashierLogin_profileBtn";
+            this.cashierLogin_profileBtn.Size = new System.Drawing.Size(176, 38);
+            this.cashierLogin_profileBtn.TabIndex = 14;
+            this.cashierLogin_profileBtn.Text = "Profile";
+            this.cashierLogin_profileBtn.UseVisualStyleBackColor = true;
+            this.cashierLogin_profileBtn.Click += new System.EventHandler(this.cashierLogin_profileBtn_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QuanLyCafe.Properties.Resources.Cafe_2;
-            this.pictureBox1.Location = new System.Drawing.Point(50, 42);
+            this.pictureBox1.Location = new System.Drawing.Point(50, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.TabIndex = 9;
@@ -262,11 +279,20 @@
             this.allCustomersForm1.Size = new System.Drawing.Size(884, 554);
             this.allCustomersForm1.TabIndex = 6;
             // 
+            // profileCashier1
+            // 
+            this.profileCashier1.BackColor = System.Drawing.Color.Teal;
+            this.profileCashier1.Location = new System.Drawing.Point(224, 94);
+            this.profileCashier1.Name = "profileCashier1";
+            this.profileCashier1.Size = new System.Drawing.Size(892, 540);
+            this.profileCashier1.TabIndex = 10;
+            // 
             // CashierMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 600);
+            this.Controls.Add(this.profileCashier1);
             this.Controls.Add(this.dashboardForm1);
             this.Controls.Add(this.addProductForm1);
             this.Controls.Add(this.orderForm1);
@@ -307,5 +333,7 @@
         private OrderForm orderForm1;
         private AddProductForm addProductForm1;
         private DashboardForm dashboardForm1;
+        private System.Windows.Forms.Button cashierLogin_profileBtn;
+        private ProfileCashier profileCashier1;
     }
 }

@@ -37,6 +37,7 @@
             // 
             // allCustomers_dataTable
             // 
+            this.allCustomers_dataTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.allCustomers_dataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.allCustomers_dataTable.Location = new System.Drawing.Point(16, 37);
             this.allCustomers_dataTable.Margin = new System.Windows.Forms.Padding(2);
@@ -45,6 +46,7 @@
             this.allCustomers_dataTable.RowTemplate.Height = 24;
             this.allCustomers_dataTable.Size = new System.Drawing.Size(841, 475);
             this.allCustomers_dataTable.TabIndex = 3;
+            this.allCustomers_dataTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.allCustomers_dataTable_CellDoubleClick);
             // 
             // label2
             // 

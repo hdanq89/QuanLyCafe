@@ -85,6 +85,10 @@ namespace QuanLyCafe
                 this.Hide();
             }
         }
+        private void cashierLogin_profileBtn_Click(object sender, EventArgs e)
+        {
+
+        }
 
 
         #endregion

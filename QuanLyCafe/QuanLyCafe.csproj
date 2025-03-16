@@ -76,8 +76,16 @@
     <Compile Include="CashierMainForm.Designer.cs">
       <DependentUpon>CashierMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerOrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerOrdersForm.Designer.cs">
+      <DependentUpon>CustomerOrdersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\AddProductsDAO.cs" />
     <Compile Include="DAO\AddUsersDAO.cs" />
+    <Compile Include="DAO\AllcustomerDAO.cs" />
+    <Compile Include="DAO\CustomerOrderFormDAO.cs" />
     <Compile Include="DAO\DashboardDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
@@ -89,6 +97,9 @@
     </Compile>
     <Compile Include="DTO\AddProductsDTO.cs" />
     <Compile Include="DTO\AddUsersDTO.cs" />
+    <Compile Include="DTO\AllCustomerDTO.cs" />
+    <Compile Include="DTO\CustomerOrderFormListDetailDTO.cs" />
+    <Compile Include="DTO\CustomerOrdersFormOrderListDTO.cs" />
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +111,12 @@
     </Compile>
     <Compile Include="OrderForm.Designer.cs">
       <DependentUpon>OrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileCashier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProfileCashier.Designer.cs">
+      <DependentUpon>ProfileCashier.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,6 +135,9 @@
     <EmbeddedResource Include="CashierMainForm.resx">
       <DependentUpon>CashierMainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomerOrdersForm.resx">
+      <DependentUpon>CustomerOrdersForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfileCashier.resx">
+      <DependentUpon>ProfileCashier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

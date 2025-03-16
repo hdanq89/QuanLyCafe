@@ -15,7 +15,7 @@ namespace QuanLyCafe.DTO
             
             this.Name = row["ProductName"].ToString();
             this.Stock = (int)row["Stock"];
-            this.Price = (float)Convert.ToDouble(row["Price"].ToString());
+            this.Price = (float)Convert.ToDouble(row["Price"]);
             this.Status = row["Status"].ToString();
             this.DesCription = row["Description"].ToString();
             this.Type = row["Name_Category"].ToString();

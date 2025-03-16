@@ -117,7 +117,7 @@
             this.adminLogin_customersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adminLogin_customersBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminLogin_customersBtn.ForeColor = System.Drawing.Color.White;
-            this.adminLogin_customersBtn.Location = new System.Drawing.Point(18, 397);
+            this.adminLogin_customersBtn.Location = new System.Drawing.Point(18, 368);
             this.adminLogin_customersBtn.Name = "adminLogin_customersBtn";
             this.adminLogin_customersBtn.Size = new System.Drawing.Size(176, 38);
             this.adminLogin_customersBtn.TabIndex = 14;
@@ -131,7 +131,7 @@
             this.adminLogin_addProdBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adminLogin_addProdBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminLogin_addProdBtn.ForeColor = System.Drawing.Color.White;
-            this.adminLogin_addProdBtn.Location = new System.Drawing.Point(18, 343);
+            this.adminLogin_addProdBtn.Location = new System.Drawing.Point(18, 314);
             this.adminLogin_addProdBtn.Name = "adminLogin_addProdBtn";
             this.adminLogin_addProdBtn.Size = new System.Drawing.Size(176, 38);
             this.adminLogin_addProdBtn.TabIndex = 13;
@@ -145,7 +145,7 @@
             this.adminLogin_addUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adminLogin_addUserBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminLogin_addUserBtn.ForeColor = System.Drawing.Color.White;
-            this.adminLogin_addUserBtn.Location = new System.Drawing.Point(18, 288);
+            this.adminLogin_addUserBtn.Location = new System.Drawing.Point(18, 259);
             this.adminLogin_addUserBtn.Name = "adminLogin_addUserBtn";
             this.adminLogin_addUserBtn.Size = new System.Drawing.Size(176, 38);
             this.adminLogin_addUserBtn.TabIndex = 14;
@@ -159,7 +159,7 @@
             this.adminLogin_dashboardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adminLogin_dashboardBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminLogin_dashboardBtn.ForeColor = System.Drawing.Color.White;
-            this.adminLogin_dashboardBtn.Location = new System.Drawing.Point(18, 234);
+            this.adminLogin_dashboardBtn.Location = new System.Drawing.Point(18, 205);
             this.adminLogin_dashboardBtn.Name = "adminLogin_dashboardBtn";
             this.adminLogin_dashboardBtn.Size = new System.Drawing.Size(176, 38);
             this.adminLogin_dashboardBtn.TabIndex = 13;
@@ -173,7 +173,7 @@
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(97, 184);
+            this.label4.Location = new System.Drawing.Point(97, 155);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 15);
             this.label4.TabIndex = 12;
@@ -185,7 +185,7 @@
             this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(15, 184);
+            this.label3.Location = new System.Drawing.Point(15, 155);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 15);
             this.label3.TabIndex = 11;
@@ -197,7 +197,7 @@
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(27, 145);
+            this.label2.Location = new System.Drawing.Point(27, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 22);
             this.label2.TabIndex = 10;
@@ -206,7 +206,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QuanLyCafe.Properties.Resources.Cafe_2;
-            this.pictureBox1.Location = new System.Drawing.Point(50, 42);
+            this.pictureBox1.Location = new System.Drawing.Point(50, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.TabIndex = 9;
