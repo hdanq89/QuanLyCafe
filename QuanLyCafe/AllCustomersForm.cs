@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyCafe.DAO;
+using QuanLyCafe.BLL;
 
 namespace QuanLyCafe
 {
     public partial class AllCustomersForm: UserControl
     {
+        AllCustomersDLL allCus = new AllCustomersDLL();
         public AllCustomersForm()
         {
             InitializeComponent();
@@ -22,7 +24,7 @@ namespace QuanLyCafe
         #region Method
         void displayAllCus()
         {
-            allCustomers_dataTable.DataSource =  CustomerDAO.Instance.getAllCus();
+            allCustomers_dataTable.DataSource =  allCus.getAllCus();
         }
         #endregion
 
@@ -36,7 +38,7 @@ namespace QuanLyCafe
                 string email = allCustomers_dataTable.Rows[e.RowIndex].Cells[2].Value.ToString();
                 string phone = allCustomers_dataTable.Rows[e.RowIndex].Cells[1].Value.ToString();
 
-                int id =  CustomerDAO.Instance.getIDCus(email, phone);
+                int id =  allCus.getIDCus(email, phone);
 
                 CustomerOrdersForm orderForm = new CustomerOrdersForm(id,name);
                 orderForm.ShowDialog();

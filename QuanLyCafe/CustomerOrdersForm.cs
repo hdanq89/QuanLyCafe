@@ -1,4 +1,5 @@
-﻿using QuanLyCafe.DAO;
+﻿using QuanLyCafe.BLL;
+using QuanLyCafe.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace QuanLyCafe
 {
     public partial class CustomerOrdersForm: Form
     {
+        CustomerOrderDLL cusOrder = new CustomerOrderDLL();
         public CustomerOrdersForm(int id,string name)
         {
             InitializeComponent();
@@ -23,7 +25,7 @@ namespace QuanLyCafe
 
         public void displayOrderList(int id)
         {
-           orderList.DataSource =  CustomerOrderFormDAO.Instance.getCustomerOrder(id);
+           orderList.DataSource =  cusOrder.getCustomerOrder(id);
         }
 
         private void adminLogin_close_Click(object sender, EventArgs e)
@@ -38,7 +40,7 @@ namespace QuanLyCafe
 
                 DataGridViewRow row = orderList.Rows[e.RowIndex];
                 int idOrder = (int)row.Cells[0].Value;
-                dataGridView2.DataSource = CustomerOrderFormDAO.Instance.getOrderDetail(idOrder);
+                dataGridView2.DataSource = cusOrder.getOrderDetail(idOrder);
             }
         }
     }

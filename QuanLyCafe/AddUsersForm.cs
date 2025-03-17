@@ -91,12 +91,12 @@ namespace QuanLyCafe
             {
                 string username = AddUsers_username.Text.Trim();
                 string email = AddUsers_email.Text.Trim();
-                if (CashiersDAO.Instance.checkUser(username))
+                if (addUser.checkUser(username))
                 {
                     MessageBox.Show(username + " is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
-                else if(CashiersDAO.Instance.checkEmail(email))
+                else if(addUser.checkEmail(email))
                 {
                     MessageBox.Show( "Email is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }    
@@ -115,7 +115,7 @@ namespace QuanLyCafe
                     {
                         Directory.CreateDirectory(User_Directory);
                     }
-                    if (CashiersDAO.Instance.insertUser(username, pass, fullname, role, status, birthday, email, fileImgProfile))
+                    if (addUser.insertUser(username, pass, fullname, role, status, birthday, email, fileImgProfile))
                     {
 
                         File.Copy(adminAddUsers_imgView.ImageLocation, path, true);
@@ -161,7 +161,7 @@ namespace QuanLyCafe
                     {
                         Directory.CreateDirectory(User_Directory);
                     }
-                    if (CashiersDAO.Instance.updateUser(username, pass, fullname, role, status, birthday, email, id, fileImgProfile))
+                    if (addUser.updateUser(username, pass, fullname, role, status, birthday, email, id, fileImgProfile))
                     {
                         if(fileImgProfile != fileImgView)
                         {
@@ -211,9 +211,7 @@ namespace QuanLyCafe
                     adminAddUsers_imgView.ImageLocation = null;
                 }
 
-                string query = "select id from Employees where Username = @usern and statusDel = 0";
-                object obj = DataProvider.Instance.ExecuteScalar(query, new object[] { usern });
-                id = (obj != null && obj != DBNull.Value) ? (int)obj : 0;
+                id = addUser.getIDUser(usern);
             }
         }
 
@@ -233,7 +231,7 @@ namespace QuanLyCafe
                    
 
                    
-                    if (CashiersDAO.Instance.deleteUser(id))
+                    if (addUser.deleteUser(id))
                     { 
 
                         MessageBox.Show("Deleted successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);

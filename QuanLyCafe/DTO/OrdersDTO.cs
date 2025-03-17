@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace QuanLyCafe.DTO
 {
-    public  class CustomerOrdersFormOrderListDTO
+    public  class OrdersDTO
     {
 
 
-		public CustomerOrdersFormOrderListDTO(DataRow row)
+		public OrdersDTO(DataRow row)
 		{
             this.OrderID = (int)row["Order_ID"];
             this.Total_Price = Convert.ToDouble(row["Total"]);

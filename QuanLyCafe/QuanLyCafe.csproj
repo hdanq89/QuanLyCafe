@@ -70,7 +70,10 @@
     <Compile Include="AllCustomersForm.Designer.cs">
       <DependentUpon>AllCustomersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BLL\AddProductDLL.cs" />
     <Compile Include="BLL\AddUserDLL.cs" />
+    <Compile Include="BLL\AllCustomersDLL.cs" />
+    <Compile Include="BLL\CustomerOrderDLL.cs" />
     <Compile Include="BLL\DashboardDLL.cs" />
     <Compile Include="BLL\LoginDLL.cs" />
     <Compile Include="CashierMainForm.cs">
@@ -95,7 +98,7 @@
     <Compile Include="DAO\ProductsDAO.cs" />
     <Compile Include="DAO\CashiersDAO.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
-    <Compile Include="DAO\CustomerOrderFormDAO.cs" />
+    <Compile Include="DAO\OrdersDetailDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DashboardForm.cs">
       <SubType>UserControl</SubType>
@@ -106,8 +109,8 @@
     <Compile Include="DTO\ProductsDTO.cs" />
     <Compile Include="DTO\CashiersDTO.cs" />
     <Compile Include="DTO\CustomersDTO.cs" />
-    <Compile Include="DTO\CustomerOrderFormListDetailDTO.cs" />
-    <Compile Include="DTO\CustomerOrdersFormOrderListDTO.cs" />
+    <Compile Include="DTO\OrdersDetailDTO.cs" />
+    <Compile Include="DTO\OrdersDTO.cs" />
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -13,11 +13,13 @@ using QuanLyCafe.DTO;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.IO;
+using QuanLyCafe.BLL;
 
 namespace QuanLyCafe
 {
     public partial class AddProductForm: UserControl
     {
+        AddProductDLL addProduct = new AddProductDLL();
         public AddProductForm()
         {
             InitializeComponent();
@@ -39,7 +41,7 @@ namespace QuanLyCafe
 
         void displayListProduct()
         {
-            dataGridView1.DataSource =  ProductsDAO.Instance.getListProduct();
+            dataGridView1.DataSource =  addProduct.getListProduct();
         }
 
         void clear()
@@ -87,9 +89,9 @@ namespace QuanLyCafe
 
                 string selectedValue = adminAddProducts_type.SelectedItem.ToString();
                 int type = selectedValue == "Cà phê hạt" ? 1 :
-                           selectedValue == "Cà phê pha máy" ? 2 :
-                           selectedValue == "Phin cà phê" ? 3 :
-                           selectedValue == "Cà phê rang xay" ? 4 :
+                           selectedValue == "Cà phê pha máy" ? 3 :
+                           selectedValue == "Phin cà phê" ? 4 :
+                           selectedValue == "Cà phê rang xay" ? 2:
                            selectedValue == "Phụ kiện pha chế" ? 5 : 0;
                 string status = adminAddProducts_status.SelectedItem.ToString();
                 int stock = Convert.ToInt32( adminAddProducts_stock.Text);
@@ -97,14 +99,18 @@ namespace QuanLyCafe
                 float price = (float)Convert.ToDouble(adminAddProducts_price.Text);
                 string Product_Directory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "Product_Directory");
                 string path = Path.Combine(Product_Directory, name + ".jpg");
+                string fileImgView = Path.GetFileName(adminAddProducts_imgView.ImageLocation);
                 string fileImgProfile = Path.GetFileName(path);
                 if (!Directory.Exists(Product_Directory))
                 {
                     Directory.CreateDirectory(Product_Directory);
                 }
-                if (ProductsDAO.Instance.insertProduct(name, stock, price, type, fileImgProfile, status, des))
+                if (addProduct.insertProduct(name, stock, price, type, fileImgProfile, status, des))
                 {
-                    File.Copy(adminAddProducts_imgView.ImageLocation, path, true);
+                    if (fileImgView != fileImgProfile)
+                    {
+                        File.Copy(adminAddProducts_imgView.ImageLocation, path, true);
+                    }
                     MessageBox.Show("Added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clear();
                     displayListProduct();
@@ -145,9 +151,7 @@ namespace QuanLyCafe
                     adminAddProducts_imgView.ImageLocation = null;
 
                 }
-                string query = "select Product_ID from Products where ProductName = @name and statusDel = 0";
-                object obj = DataProvider.Instance.ExecuteScalar(query, new object[] { name });
-                id = (obj != null && obj != DBNull.Value) ? (int)obj : 0;
+                id = addProduct.getIDProd(name);
             }
         }
 
@@ -182,7 +186,7 @@ namespace QuanLyCafe
                     {
                         Directory.CreateDirectory(Product_Directory);
                     }
-                    if (ProductsDAO.Instance.updateProduct(name, stock, price, type, fileImgProfile, status, des,id))
+                    if (addProduct.updateProduct(name, stock, price, type, fileImgProfile, status, des,id))
                     {
                         if(fileImgView != fileImgProfile)
                         {
@@ -213,7 +217,7 @@ namespace QuanLyCafe
                 DialogResult result = MessageBox.Show("Are you sure you want to Delete Username: " + name + "?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {                  
-                    if (ProductsDAO.Instance.deleteProduct( id))
+                    if (addProduct.deleteProduct( id))
                     {
                         
                         MessageBox.Show("Deleted successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);

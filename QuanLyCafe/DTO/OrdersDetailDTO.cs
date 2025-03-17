@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 
 namespace QuanLyCafe.DTO
 {
-    public class CustomerOrderFormListDetailDTO
+    public class OrdersDetailDTO
     {
 
 
-        public CustomerOrderFormListDetailDTO(DataRow row)
+        public OrdersDetailDTO(DataRow row)
         {
             this.Product_Name = row["ProductName"].ToString();
-            this.Description = row["Description"].ToString();
             this.Quantity = (int)row["Quantity"];
             this.Unit = Convert.ToDouble(row["Unit"]);
         }
@@ -27,13 +26,6 @@ namespace QuanLyCafe.DTO
             set { product_Name = value; }
         }
 
-        private string description;
-
-        public string Description
-        {
-            get { return description; }
-            set { description = value; }
-        }
 
         private int quantily;
 

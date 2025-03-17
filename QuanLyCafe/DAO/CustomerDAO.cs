@@ -19,6 +19,7 @@ namespace QuanLyCafe.DAO
         }
 
 
+        #region AllCustomer
         public List<CustomersDTO> getAllCus()
         {
             List<CustomersDTO> listUser = new List<CustomersDTO>();
@@ -34,13 +35,15 @@ namespace QuanLyCafe.DAO
 
         public int getIDCus(string email, string phone)
         {
-            object data = DataProvider.Instance.ExecuteScalar($"select Customer_ID from Customers where Email= @email and phone= @phone ",new object[] {email,phone});
+            object data = DataProvider.Instance.ExecuteScalar($"select Customer_ID from Customers where Email= @email and phone= @phone ", new object[] { email, phone });
 
             int result = (data != null && data != DBNull.Value) ? Convert.ToInt32(data) : 0;
 
             return result;
         }
+        #endregion
 
+        #region Dashboard 
         public int TotalCustomer()
         {
             string query = "select count(*) from Customers";
@@ -48,5 +51,6 @@ namespace QuanLyCafe.DAO
             int result = (obj != null && obj != DBNull.Value) ? Convert.ToInt32(obj) : 0;
             return result;
         }
+        #endregion
     }
 }

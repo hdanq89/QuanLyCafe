@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace QuanLyCafe.DAO
 {
@@ -21,6 +22,7 @@ namespace QuanLyCafe.DAO
 
         private ProductsDAO() { }
 
+        #region addProduct
         public List<ProductsDTO> getListProduct()
         {
             List<ProductsDTO> listProduct = new List<ProductsDTO>();
@@ -35,17 +37,17 @@ namespace QuanLyCafe.DAO
             return listProduct;
         }
 
-        public bool insertProduct(string name,int stock,float price,int category,string img,string status,string description)
+        public bool insertProduct(string name, int stock, float price, int category, string img, string status, string description)
         {
             string insertQuery = "insert into Products(ProductName,Stock,Price,Category_id,Image,Status,Description) values( @ProductName , @Stock , @Price , @Category_id , @Image , @Status , @Description )";
-            int result = DataProvider.Instance.ExecuteNonQuery(insertQuery,new object[] { name , stock , price , category, img, status , description });
+            int result = DataProvider.Instance.ExecuteNonQuery(insertQuery, new object[] { name, stock, price, category, img, status, description });
             return result > 0;
         }
 
-        public bool updateProduct(string name, int stock, float price, int category, string img, string status, string description,int id)
+        public bool updateProduct(string name, int stock, float price, int category, string img, string status, string description, int id)
         {
             string udpateQuery = "update Products set ProductName= @ProductName ,Stock= @Stock ,Price= @Price ,Category_id= @Category_id ,Image= @Image ,Status= @Status ,Description= @Description where Product_ID= @Product_ID";
-            int result = DataProvider.Instance.ExecuteNonQuery(udpateQuery, new object[] { name, stock, price, category, img, status, description,id });
+            int result = DataProvider.Instance.ExecuteNonQuery(udpateQuery, new object[] { name, stock, price, category, img, status, description, id });
             return result > 0;
         }
 
@@ -55,5 +57,14 @@ namespace QuanLyCafe.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(udpateQuery, new object[] { id });
             return result > 0;
         }
+
+        public int getIDProd(string name)
+        {
+            string query = "select Product_ID from Products where ProductName = @name and statusDel = 0";
+            object obj = DataProvider.Instance.ExecuteScalar(query, new object[] { name });
+            int id = (obj != null && obj != DBNull.Value) ? (int)obj : 0;
+            return id;
+        }
+        #endregion
     }
 }

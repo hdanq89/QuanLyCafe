@@ -25,18 +25,27 @@ namespace QuanLyCafe.DAO
 
         private CashiersDAO() { }
 
+        #region AddUser
         public List<CashiersDTO> getAllUsers()
         {
             List<CashiersDTO> listUser = new List<CashiersDTO>();
 
             DataTable data = DataProvider.Instance.ExecuteQuery("select * from Cashiers where statusDel <> 1");
 
-            foreach(DataRow item in data.Rows)
+            foreach (DataRow item in data.Rows)
             {
                 CashiersDTO info = new CashiersDTO(item);
                 listUser.Add(info);
-            }    
+            }
             return listUser;
+        }
+
+        public int getIDUser(string usern)
+        {
+            string query = "select id from Cashiers where Username = @usern and statusDel = 0";
+            object obj = DataProvider.Instance.ExecuteScalar(query, new object[] { usern });
+            int id = (obj != null && obj != DBNull.Value) ? (int)obj : 0;
+            return id;
         }
 
         public bool checkUser(string username)
@@ -46,8 +55,8 @@ namespace QuanLyCafe.DAO
             DataTable result = DataProvider.Instance.ExecuteQuery(selectUsern, new object[] { username });
 
             return result.Rows.Count > 0;
-            
-                
+
+
         }
 
         public bool checkEmail(string email)
@@ -59,19 +68,19 @@ namespace QuanLyCafe.DAO
             return result.Rows.Count > 0;
         }
 
-        public bool insertUser(string username, string pass, string fullname, string role,string status, string birthday,string email,string Profile_Image)
+        public bool insertUser(string username, string pass, string fullname, string role, string status, string birthday, string email, string Profile_Image)
         {
             string insert = " INSERT INTO Cashiers (Username,Password,Fullname,Role,Status,BirthDate,Email,Profile_Image ) VALUES( @usern , @pass , @fullname , @role , @status , @date , @email , @Profile_Image )";
 
-            int result = DataProvider.Instance.ExecuteNonQuery(insert, new object[] { username, pass, fullname, role, status, birthday , email, Profile_Image });
+            int result = DataProvider.Instance.ExecuteNonQuery(insert, new object[] { username, pass, fullname, role, status, birthday, email, Profile_Image });
 
             return result > 0;
         }
 
-        public bool updateUser(string username, string pass, string fullname, string role, string status, string birthday, string email,int id,string Profile_Image)
+        public bool updateUser(string username, string pass, string fullname, string role, string status, string birthday, string email, int id, string Profile_Image)
         {
             string query = "update Cashiers set Username= @usern ,Email= @email ,Password= @Password ,Fullname= @fname ,Role= @role ,Status= @status ,BirthDate= @date ,Profile_Image= @Profile_Image where ID= @id";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { username, email, pass, fullname, role, status, birthday, Profile_Image,id });
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { username, email, pass, fullname, role, status, birthday, Profile_Image, id });
             return result > 0;
         }
 
@@ -81,8 +90,9 @@ namespace QuanLyCafe.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id });
             return result > 0;
         }
+        #endregion
 
-
+        #region Login
         public bool Login(string userName, string passWord)
         {
             string query = "select * from Cashiers where Username = N'" + userName + "' and Password = N'" + passWord + "' and Status = 'Active'";
@@ -98,7 +108,9 @@ namespace QuanLyCafe.DAO
             CashiersDTO user = new CashiersDTO(data.Rows[0]);
             return user.Role;
         }
+        #endregion
 
+        #region Dashboard
         public int ToTalCashier()
         {
             string query = "select count(*) from Cashiers where role = 'Cashier' and status = 'Active'";
@@ -106,5 +118,6 @@ namespace QuanLyCafe.DAO
             int result = (obj != null && obj != DBNull.Value) ? Convert.ToInt32(obj) : 0;
             return result;
         }
+        #endregion
     }
 }

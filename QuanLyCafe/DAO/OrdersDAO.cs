@@ -1,5 +1,7 @@
-﻿using System;
+﻿using QuanLyCafe.DTO;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +18,7 @@ namespace QuanLyCafe.DAO
             private set { OrdersDAO.instance = value; }
         }
 
+        #region Dashboard
         public double TodayIncome()
         {
             DateTime today = DateTime.Today;
@@ -39,5 +42,22 @@ namespace QuanLyCafe.DAO
             double result = (obj != null && obj != DBNull.Value) ? Convert.ToDouble(obj) : 0;
             return result;
         }
+        #endregion
+
+        #region CustomerOder
+        public List<OrdersDTO> getCustomerOrder(int id)
+        {
+            List<OrdersDTO> listOrder = new List<OrdersDTO>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("select *  from Cashiers,Orders where id = Cashier_ID and Customer_ID = @CusID ", new object[] { id });
+
+            foreach (DataRow item in data.Rows)
+            {
+                OrdersDTO info = new OrdersDTO(item);
+                listOrder.Add(info);
+            }
+            return listOrder;
+        }
+        #endregion
     }
 }
