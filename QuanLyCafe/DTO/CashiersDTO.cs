@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace QuanLyCafe.DTO
 {
-    public class AddUsersDTO
+    public class CashiersDTO
     {
 
-        public AddUsersDTO(DataRow row)
+        public CashiersDTO(DataRow row)
         {
             this.Username = row["Username"].ToString();
             this.Password = row["Password"].ToString();

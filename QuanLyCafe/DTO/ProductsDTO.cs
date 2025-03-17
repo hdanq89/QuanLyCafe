@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace QuanLyCafe.DTO
 {
-    public class AddProductsDTO
+    public class ProductsDTO
     {
 
-        public AddProductsDTO(DataRow row)
+        public ProductsDTO(DataRow row)
         {
             
             this.Name = row["ProductName"].ToString();

@@ -20,10 +20,20 @@ namespace QuanLyCafe
             
         }
 
+        #region Events
+
         private void adminAddUsers_importBtn_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void btn_changePass_Click(object sender, EventArgs e)
+        {
+            ChangePasswordForm changPassForm = new ChangePasswordForm();
+            changPassForm.ShowDialog();
+        }
+        #endregion
+
     }
 }
 

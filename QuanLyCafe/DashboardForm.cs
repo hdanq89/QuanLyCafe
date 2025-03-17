@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyCafe.DAO;
+using QuanLyCafe.BLL;
 
 namespace QuanLyCafe
 {
@@ -24,23 +25,24 @@ namespace QuanLyCafe
 
 
         #region Method
+        DashboardDLL dashboard = new DashboardDLL();
         void DisplayTotalCashier()
         {
-            lbl_countCashier.Text =  DashboardDAO.Instance.ToTalCashier().ToString();
+            lbl_countCashier.Text =  dashboard.allCashier().ToString();
         }
 
         void DisplayTotalCustomers()
         {
-            lbl_countCus.Text = DashboardDAO.Instance.TotalCustomer().ToString();
+            lbl_countCus.Text = dashboard.allCustomer().ToString();
         }
 
         void DisplayTodayIncome()
         {
-            lbl_todayIncome.Text = DashboardDAO.Instance.TodayIncome().ToString("0.00");
+            lbl_todayIncome.Text = dashboard.todayIncome().ToString("0.00");
         }
         void DisplayMonthIncome()
         {
-            lbl_monthIncome.Text = DashboardDAO.Instance.MonthIncome().ToString("0.00");
+            lbl_monthIncome.Text = dashboard.monthIncome().ToString("0.00");
         }
         #endregion
     }

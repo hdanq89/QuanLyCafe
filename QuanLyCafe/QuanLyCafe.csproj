@@ -70,11 +70,20 @@
     <Compile Include="AllCustomersForm.Designer.cs">
       <DependentUpon>AllCustomersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BLL\AddUserDLL.cs" />
+    <Compile Include="BLL\DashboardDLL.cs" />
+    <Compile Include="BLL\LoginDLL.cs" />
     <Compile Include="CashierMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CashierMainForm.Designer.cs">
       <DependentUpon>CashierMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerOrdersForm.cs">
       <SubType>Form</SubType>
@@ -82,22 +91,21 @@
     <Compile Include="CustomerOrdersForm.Designer.cs">
       <DependentUpon>CustomerOrdersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DAO\AddProductsDAO.cs" />
-    <Compile Include="DAO\AddUsersDAO.cs" />
-    <Compile Include="DAO\AllcustomerDAO.cs" />
+    <Compile Include="DAO\OrdersDAO.cs" />
+    <Compile Include="DAO\ProductsDAO.cs" />
+    <Compile Include="DAO\CashiersDAO.cs" />
+    <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\CustomerOrderFormDAO.cs" />
-    <Compile Include="DAO\DashboardDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
-    <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DashboardForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="DashboardForm.Designer.cs">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DTO\AddProductsDTO.cs" />
-    <Compile Include="DTO\AddUsersDTO.cs" />
-    <Compile Include="DTO\AllCustomerDTO.cs" />
+    <Compile Include="DTO\ProductsDTO.cs" />
+    <Compile Include="DTO\CashiersDTO.cs" />
+    <Compile Include="DTO\CustomersDTO.cs" />
     <Compile Include="DTO\CustomerOrderFormListDetailDTO.cs" />
     <Compile Include="DTO\CustomerOrdersFormOrderListDTO.cs" />
     <Compile Include="FormLogin.cs">
@@ -135,6 +143,9 @@
     <EmbeddedResource Include="CashierMainForm.resx">
       <DependentUpon>CashierMainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerOrdersForm.resx">
       <DependentUpon>CustomerOrdersForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,18 +163,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -176,10 +187,10 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Assets\Cafe_2.png" />
-    <Content Include="Assets\icons8-customers-56.png" />
-    <Content Include="Assets\icons8-money-56 %281%29.png" />
-    <Content Include="Assets\icons8-money-56 %283%29.png" />
-    <Content Include="Assets\icons8-user-56.png" />
+    <Content Include="Assets\icons8-cash-100.png" />
+    <Content Include="Assets\icons8-dollar-bag-100.png" />
+    <Content Include="Assets\icons8-group-100.png" />
+    <Content Include="Assets\icons8-man-110.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

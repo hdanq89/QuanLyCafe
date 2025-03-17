@@ -22,7 +22,7 @@ namespace QuanLyCafe.DAO
         {
             List<CustomerOrdersFormOrderListDTO> listOrder = new List<CustomerOrdersFormOrderListDTO>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("select *  from Employees,Orders where id = Employee_ID and Customer_ID = @CusID ",new object[] {id});
+            DataTable data = DataProvider.Instance.ExecuteQuery("select *  from Cashiers,Orders where id = Cashier_ID and Customer_ID = @CusID ", new object[] {id});
 
             foreach (DataRow item in data.Rows)
             {

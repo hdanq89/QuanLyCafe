@@ -39,7 +39,7 @@ namespace QuanLyCafe
 
         void displayListProduct()
         {
-            dataGridView1.DataSource =  AddProductsDAO.Instance.getListProduct();
+            dataGridView1.DataSource =  ProductsDAO.Instance.getListProduct();
         }
 
         void clear()
@@ -102,7 +102,7 @@ namespace QuanLyCafe
                 {
                     Directory.CreateDirectory(Product_Directory);
                 }
-                if (AddProductsDAO.Instance.insertProduct(name, stock, price, type, fileImgProfile, status, des))
+                if (ProductsDAO.Instance.insertProduct(name, stock, price, type, fileImgProfile, status, des))
                 {
                     File.Copy(adminAddProducts_imgView.ImageLocation, path, true);
                     MessageBox.Show("Added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -182,7 +182,7 @@ namespace QuanLyCafe
                     {
                         Directory.CreateDirectory(Product_Directory);
                     }
-                    if (AddProductsDAO.Instance.updateProduct(name, stock, price, type, fileImgProfile, status, des,id))
+                    if (ProductsDAO.Instance.updateProduct(name, stock, price, type, fileImgProfile, status, des,id))
                     {
                         if(fileImgView != fileImgProfile)
                         {
@@ -213,7 +213,7 @@ namespace QuanLyCafe
                 DialogResult result = MessageBox.Show("Are you sure you want to Delete Username: " + name + "?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {                  
-                    if (AddProductsDAO.Instance.deleteProduct( id))
+                    if (ProductsDAO.Instance.deleteProduct( id))
                     {
                         
                         MessageBox.Show("Deleted successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);

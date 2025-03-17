@@ -1,4 +1,5 @@
-﻿using QuanLyCafe.DAO;
+﻿using QuanLyCafe.BLL;
+using QuanLyCafe.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,10 +42,11 @@ namespace QuanLyCafe
             }
             else
             {
-                if (LoginDAO.Instance.Login(userName, passWord))
+                LoginDLL login = new LoginDLL();
+                if (login.checkLogin(userName, passWord))
                 {
                     MessageBox.Show("Login successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (LoginDAO.Instance.getRole(userName, passWord) == "Admin")
+                    if (login.role(userName, passWord) == "Admin")
                     {
                         AdminMainForm admin = new AdminMainForm();
                         admin.Show();

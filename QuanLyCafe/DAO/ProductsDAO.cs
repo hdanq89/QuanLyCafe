@@ -8,28 +8,28 @@ using System.Threading.Tasks;
 
 namespace QuanLyCafe.DAO
 {
-    public class AddProductsDAO
+    public class ProductsDAO
     {
 
-        private static AddProductsDAO instance;
+        private static ProductsDAO instance;
 
-        public static AddProductsDAO Instance
+        public static ProductsDAO Instance
         {
-            get { if (instance == null) instance = new AddProductsDAO(); return AddProductsDAO.instance; }
-            private set { AddProductsDAO.instance = value; }
+            get { if (instance == null) instance = new ProductsDAO(); return ProductsDAO.instance; }
+            private set { ProductsDAO.instance = value; }
         }
 
-        private AddProductsDAO() { }
+        private ProductsDAO() { }
 
-        public List<AddProductsDTO> getListProduct()
+        public List<ProductsDTO> getListProduct()
         {
-            List<AddProductsDTO> listProduct = new List<AddProductsDTO>();
+            List<ProductsDTO> listProduct = new List<ProductsDTO>();
 
             DataTable data = DataProvider.Instance.ExecuteQuery("select * from Products,Categories where statusDel = 0 and Category_id = ID_Category");
 
             foreach (DataRow item in data.Rows)
             {
-                AddProductsDTO info = new AddProductsDTO(item);
+                ProductsDTO info = new ProductsDTO(item);
                 listProduct.Add(info);
             }
             return listProduct;

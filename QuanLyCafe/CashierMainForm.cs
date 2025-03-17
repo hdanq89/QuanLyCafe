@@ -29,6 +29,7 @@ namespace QuanLyCafe
             addProductForm1.Visible = false;
             orderForm1.Visible = false;
             allCustomersForm1.Visible = false;
+            profileCashier1.Visible = false;
         }
         private void cashierLogin_dashboardBtn_Click(object sender, EventArgs e)
         {
@@ -36,6 +37,7 @@ namespace QuanLyCafe
             addProductForm1.Visible = false;
             orderForm1.Visible = false;
             allCustomersForm1.Visible = false;
+            profileCashier1.Visible = false;
         }
 
         private void cashierLogin_addUserBtn_Click(object sender, EventArgs e)
@@ -44,6 +46,8 @@ namespace QuanLyCafe
             addProductForm1.Visible = true;
             orderForm1.Visible = false;
             allCustomersForm1.Visible = false;
+            profileCashier1.Visible = false;
+
         }
 
         private void cashierLogin_addProdBtn_Click(object sender, EventArgs e)
@@ -52,6 +56,8 @@ namespace QuanLyCafe
             addProductForm1.Visible = false;
             orderForm1.Visible = true;
             allCustomersForm1.Visible = false;
+            profileCashier1.Visible = false;
+
         }
 
 
@@ -61,6 +67,16 @@ namespace QuanLyCafe
             addProductForm1.Visible = false;
             orderForm1.Visible = false;
             allCustomersForm1.Visible = true;
+            profileCashier1.Visible = false;
+        }
+
+        private void cashierLogin_profileBtn_Click(object sender, EventArgs e)
+        {
+            dashboardForm1.Visible = false;
+            addProductForm1.Visible = false;
+            orderForm1.Visible = false;
+            allCustomersForm1.Visible = false;
+            profileCashier1.Visible = true;
         }
 
         private void closeBtn_Click(object sender, EventArgs e)
@@ -85,14 +101,10 @@ namespace QuanLyCafe
                 this.Hide();
             }
         }
-        private void cashierLogin_profileBtn_Click(object sender, EventArgs e)
-        {
+        
 
-        }
 
 
         #endregion
-
-
     }
 }

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace QuanLyCafe.DTO
 {
-    public class AllCustomerDTO
+    public class CustomersDTO
     {
 
 
-        public AllCustomerDTO(DataRow row)
+        public CustomersDTO(DataRow row)
         {
 
             this.fullName = row["Fullname"].ToString();

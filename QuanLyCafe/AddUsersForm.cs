@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using QuanLyCafe.DAO;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using QuanLyCafe.BLL;
 
 namespace QuanLyCafe
 {
@@ -22,9 +23,10 @@ namespace QuanLyCafe
         }
         #region Method
 
+        AddUserDLL addUser = new AddUserDLL();
         void DisplayUser()
         {
-            dataGridView1.DataSource = AddUsersDAO.Instance.getAllUsers();
+            dataGridView1.DataSource = addUser.listUser();
 
         }
 
@@ -89,12 +91,12 @@ namespace QuanLyCafe
             {
                 string username = AddUsers_username.Text.Trim();
                 string email = AddUsers_email.Text.Trim();
-                if (AddUsersDAO.Instance.checkUser(username))
+                if (CashiersDAO.Instance.checkUser(username))
                 {
                     MessageBox.Show(username + " is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
-                else if(AddUsersDAO.Instance.checkEmail(email))
+                else if(CashiersDAO.Instance.checkEmail(email))
                 {
                     MessageBox.Show( "Email is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }    
@@ -113,7 +115,7 @@ namespace QuanLyCafe
                     {
                         Directory.CreateDirectory(User_Directory);
                     }
-                    if (AddUsersDAO.Instance.insertUser(username, pass, fullname, role, status, birthday, email, fileImgProfile))
+                    if (CashiersDAO.Instance.insertUser(username, pass, fullname, role, status, birthday, email, fileImgProfile))
                     {
 
                         File.Copy(adminAddUsers_imgView.ImageLocation, path, true);
@@ -159,7 +161,7 @@ namespace QuanLyCafe
                     {
                         Directory.CreateDirectory(User_Directory);
                     }
-                    if (AddUsersDAO.Instance.updateUser(username, pass, fullname, role, status, birthday, email, id, fileImgProfile))
+                    if (CashiersDAO.Instance.updateUser(username, pass, fullname, role, status, birthday, email, id, fileImgProfile))
                     {
                         if(fileImgProfile != fileImgView)
                         {
@@ -231,7 +233,7 @@ namespace QuanLyCafe
                    
 
                    
-                    if (AddUsersDAO.Instance.deleteUser(id))
+                    if (CashiersDAO.Instance.deleteUser(id))
                     { 
 
                         MessageBox.Show("Deleted successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
