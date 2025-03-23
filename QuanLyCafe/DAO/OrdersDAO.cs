@@ -49,7 +49,7 @@ namespace QuanLyCafe.DAO
         {
             List<OrdersDTO> listOrder = new List<OrdersDTO>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("select *  from Cashiers,Orders where id = Cashier_ID and Customer_ID = @CusID ", new object[] { id });
+            DataTable data = DataProvider.Instance.ExecuteQuery("select *  from Cashiers,Orders where id = @Cashier_ID and Customer_ID = @CusID ", new object[] { id });
 
             foreach (DataRow item in data.Rows)
             {
@@ -59,5 +59,7 @@ namespace QuanLyCafe.DAO
             return listOrder;
         }
         #endregion
+
+        //public int insertOrder() 
     }
 }

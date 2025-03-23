@@ -46,6 +46,7 @@ namespace QuanLyCafe
                 if (login.checkLogin(userName, passWord))
                 {
                     MessageBox.Show("Login successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
                     if (login.role(userName, passWord) == "Admin")
                     {
                         AdminMainForm admin = new AdminMainForm();

@@ -93,11 +93,16 @@ namespace QuanLyCafe.DAO
         #endregion
 
         #region Login
-        public bool Login(string userName, string passWord)
+        public int Login(string userName, string passWord)
         {
-            string query = "select * from Cashiers where Username = N'" + userName + "' and Password = N'" + passWord + "' and Status = 'Active'";
+            string query = "select Cashiers.ID from Cashiers where Username = N'" + userName + "' and Password = N'" + passWord + "' and Status = 'Active'";
             DataTable results = DataProvider.Instance.ExecuteQuery(query);
-            return results.Rows.Count > 0;
+            if (results.Rows.Count > 0)
+            {
+                return Convert.ToInt32(results.Rows[0]["ID"]);
+            }
+
+            return -1;
 
         }
 

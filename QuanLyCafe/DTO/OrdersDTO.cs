@@ -15,9 +15,11 @@ namespace QuanLyCafe.DTO
 		{
             this.OrderID = (int)row["Order_ID"];
             this.Total_Price = Convert.ToDouble(row["Total"]);
-            this.Date_Create = row["Create_date"].ToString();
-            this.Cashier_Create = row["Fullname"].ToString();
+			this.Date_Create =(DateTime) row["Create_date"];
+            this.Cashier_Create =(int) row["Fullname"];
         }
+		public OrdersDTO() { }
+
 		private int orderID;
 
 		public int OrderID
@@ -34,25 +36,36 @@ namespace QuanLyCafe.DTO
 			set { total_Price  = value; }
 		}
 
-		private string date_Create;
+		private DateTime date_Create;
 
-		public string Date_Create
+		public DateTime Date_Create
 		{
 			get { return date_Create; }
 			set { date_Create = value; }
 		}
 
-		private string cashier_Create;
+		private int cashier_Create;
 
-		public string Cashier_Create
+		public int Cashier_Create
         {
 			get { return cashier_Create; }
 			set { cashier_Create = value; }
 		}
 
+		private int status;
+		public int Status
+		{
+			get { return status; }
+			set { status = value; }
+		}
 
 
-
+		private int customer_ID;
+		public int Customer_ID
+		{
+			get { return customer_ID; }
+			set { customer_ID = value; }
+		}
 
 
 

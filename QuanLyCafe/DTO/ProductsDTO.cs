@@ -14,11 +14,22 @@ namespace QuanLyCafe.DTO
         {
             
             this.Name = row["ProductName"].ToString();
+            this.Product_ID = (int)row["product_ID"];
             this.Stock = (int)row["Stock"];
             this.Price = (float)Convert.ToDouble(row["Price"]);
             this.Status = row["Status"].ToString();
             this.DesCription = row["Description"].ToString();
-            this.Type = row["Name_Category"].ToString();
+            this.Type = (int)row["Category_id"];
+        }
+        public ProductsDTO()
+        {
+
+        }
+        private int product_ID;
+        public int Product_ID
+        {
+            get { return product_ID; }
+            set { product_ID = value; }
         }
 
 
@@ -46,9 +57,9 @@ namespace QuanLyCafe.DTO
             set { price = value; }
         }
 
-        private string type;
+        private int type;
 
-        public string Type
+        public int Type
         {
             get { return type; }
             set { type = value; }

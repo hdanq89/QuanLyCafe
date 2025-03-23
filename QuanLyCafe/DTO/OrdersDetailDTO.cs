@@ -13,19 +13,26 @@ namespace QuanLyCafe.DTO
 
         public OrdersDetailDTO(DataRow row)
         {
-            this.Product_Name = row["ProductName"].ToString();
+            this.Order_ID= (int)row["Order_ID"];
+            this.Product_ID =(int) row["ProductName"];
             this.Quantity = (int)row["Quantity"];
-            this.Unit = Convert.ToDouble(row["Unit"]);
+            this.Unit = (float)row["Unit"];
         }
+        public OrdersDetailDTO() { }
+        private int product_Name;
 
-        private string product_Name;
-
-        public string Product_Name
+        public int Product_ID
         {
             get { return product_Name; }
             set { product_Name = value; }
         }
 
+        private int order_ID;
+        public int Order_ID
+        {
+            get { return order_ID; }
+            set { order_ID = value; }
+        }
 
         private int quantily;
 
@@ -35,9 +42,9 @@ namespace QuanLyCafe.DTO
             set { quantily = value; }
         }
 
-        private double unit;
+        private float unit;
 
-        public double Unit
+        public float Unit
         {
             get { return unit; }
             set { unit = value; }

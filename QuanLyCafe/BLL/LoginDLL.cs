@@ -11,8 +11,11 @@ namespace QuanLyCafe.BLL
     {
         public bool checkLogin(string userName, string passWord)
         {
-           if( CashiersDAO.Instance.Login(userName, passWord))
+            int id = CashiersDAO.Instance.Login(userName, passWord);
+            if (id > 0) // Nếu tìm thấy tài khoản hợp lệ
             {
+                Properties.Settings.Default.ID = id;
+                Properties.Settings.Default.Save(); // Lưu lại Settings
                 return true;
             }
             return false;

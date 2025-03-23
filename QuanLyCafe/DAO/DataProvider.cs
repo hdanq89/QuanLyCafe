@@ -22,7 +22,7 @@ namespace QuanLyCafe.DAO
 
         private DataProvider() { }
 
-        string connectionSTR = "Data Source=LAPTOP-49POBPPN;Initial Catalog=quan_ly_cafe;Integrated Security=True;";
+        string connectionSTR = "Data Source=DESKTOP-62HLJP1;Initial Catalog=QuanLyCafe;Persist Security Info=True;User ID=sa;Password=123;";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         

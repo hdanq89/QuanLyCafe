@@ -22,6 +22,7 @@ namespace QuanLyCafe.DAO
 
         private ProductsDAO() { }
 
+
         #region addProduct
         public List<ProductsDTO> getListProduct()
         {
@@ -65,6 +66,19 @@ namespace QuanLyCafe.DAO
             int id = (obj != null && obj != DBNull.Value) ? (int)obj : 0;
             return id;
         }
+
+        public List<ProductsDTO> getAll()
+        {
+            List<ProductsDTO> result = new List<ProductsDTO>();
+            DataTable dt = DataProvider.Instance.ExecuteQuery("select * from Products");
+            foreach (DataRow dr in dt.Rows)
+            {
+                ProductsDTO info = new ProductsDTO(dr);
+                result.Add(info);
+            }
+            return result;
+        }
+
         #endregion
     }
 }
